@@ -12,6 +12,13 @@ describe("JUEGO BOWLING", () => {
     escore.rollmany(20,1)
     expect(escore.getScore()).toEqual(20);
   });
+  it("Probar 17,0", () => {
+    const escore=new game();
+    escore.rollSpare();
+     escore.roll(3);
+    escore.rollmany(17,0)
+    expect(escore.getScore()).toEqual(16);
+  });
 });
 
 
