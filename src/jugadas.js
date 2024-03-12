@@ -1,4 +1,3 @@
-
 class game {
   constructor() {
     this.score = 0;
