@@ -1,19 +1,19 @@
-class game {
-  constructor() {
-    this.score = 0;
-    this.rolls = [];
-    this.currentRoll = 0;
+class game{
+  constructor(){
+    this.score=0;
+    this.rolls=[];
+    this.currentRoll=0;
   }
-
-  roll(pins) {
-    this.score += pins;
+  roll(pins){
+    this.score +=pins;
     this.rolls.push(pins);
   }
+ 
 
   getScore() {
     let totalScore = 0;
     let frameIndex = 0;
-
+  
     for (let frame = 0; frame < 10; frame++) {
       if (this.rolls[frameIndex] === 10) {
         totalScore += 10 + this.rolls[frameIndex + 1] + this.rolls[frameIndex + 2];
@@ -26,16 +26,16 @@ class game {
         frameIndex += 2;
       }
     }
-
+  
     return totalScore;
   }
-
-  rollmany(n, pins) {
-    for (let i = 0; i < n; i++) {
-      this.roll(pins);
+ 
+  rollmany(n,pins){
+   for(let i=0;i<n;i++){
+      this.roll(pins)
     }
-  }
 
+  }
   rollSpare() {
     this.roll(5);
     this.roll(5);
